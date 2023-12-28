@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shopping Cart</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div id="app">
+  <!-- Navigasyon Barı -->
+  <nav class="navbar">
+    <div class="navbar-item">Home</div>
+    <div class="navbar-item">About</div>
+    <div class="navbar-item">Contact</div>
+    <button class="cart-button" @click="toggleCart">Shopping Cart</button> <!-- Shopping Cart butonu eklendi -->
+  </nav>
+
+  <!-- Ürünler -->
+  <div class="content">
+    <div class="products">
+      <div class="product" draggable="true" @dragstart="dragStart('Product 1', 10)">Product 1 - $10</div>
+      <div class="product" draggable="true" @dragstart="dragStart('Product 2', 20)">Product 2 - $20</div>
+      <!-- ... Diğer ürünler ... -->
+    </div>
+  </div>
+
+  <!-- Sepet -->
+  <div class="cart" @dragover="dragOver" @drop="drop" v-show="showCart">
+    <h2>Shopping Cart</h2>
+    <ul v-if="cart.length > 0">
+      <li v-for="(item, index) in cart" :key="index">
+        {{ item.name }} - ${{ item.price.toFixed(2) }}
+        <span v-if="getQuantity(item.name) > 1"> ({{ getQuantity(item.name) }} adet)</span>
+        <button class="remove-btn" @click="removeFromCart(index)">Remove</button>
+      </li>
+    </ul>
+    <p v-else>No items in the cart</p>
+    <p>Total: ${{ getTotal().toFixed(2) }}</p>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+<script src="app.js"></script>
+</body>
+</html>
