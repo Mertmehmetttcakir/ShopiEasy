@@ -3,6 +3,7 @@ new Vue({
     data: {
         cart: [],
         showCart: false,
+        currentPage:'home',
     },
     methods: {
         dragStart(productName, productPrice) {
@@ -38,5 +39,8 @@ new Vue({
         toggleCart() {
             this.showCart = !this.showCart;
         },
+        showpage(page){
+            this.currentPage = page
+        }
     },
 });

@@ -11,9 +11,9 @@
 <div id="app">
   <!-- Navigasyon Barı -->
   <nav class="navbar">
-    <div class="navbar-item">Home</div>
-    <div class="navbar-item">About</div>
-    <div class="navbar-item">Contact</div>
+    <div class="navbar-item" @click="showpage('home')">Home</div>
+    <div class="navbar-item" @click="showpage('about')">About</div>
+    <div class="navbar-item" @click="showpage('contact')">Contact</div>
     <button class="cart-button" @click="toggleCart">Shopping Cart</button> <!-- Shopping Cart butonu eklendi -->
   </nav>
 
@@ -25,6 +25,21 @@
       <!-- ... Diğer ürünler ... -->
     </div>
   </div>
+
+  <div id="home" class="content" v-show="currentPage === 'home'">
+    <h1 style="text-align: center; position: relative; top: 50%; transform: translateY(-50%);">Welcome to our site</h1>
+    <p style="text-align :center">Feel free to check out our products</p>
+  </div>
+  <div id="about" class="content" v-show="currentPage === 'about'">
+    <h1 style="text-align: center; position: relative; top: 50%; transform: translateY(-50%);">This is an online shopping platform where you can buy any items you want and get it delivered</h1>
+  </div>
+
+  <div id="contact" class="content" v-show="currentPage === 'contact'">
+    <h1 style="text-align: center; position: relative; top: 50%; transform: translateY(-50%);">Contact Us</h1>
+    <p style="text-align: center">Get in touch with our support team or visit our office.</p>
+  </div>
+
+
 
   <!-- Sepet -->
   <div class="cart" @dragover="dragOver" @drop="drop" v-show="showCart">
