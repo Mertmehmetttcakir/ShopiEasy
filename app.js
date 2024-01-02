@@ -41,6 +41,17 @@ new Vue({
         },
         showpage(page){
             this.currentPage = page
-        }
+            this.resetContent();
+        },
+        resetContent() {
+            const pages = ['home', 'about', 'contact'];
+            pages.forEach((page) => {
+                const element = document.getElementById(page);
+                if (element) {
+                    element.style.display = page === this.currentPage ? 'block' : 'none';
+                }
+            });
+
+        },
     },
 });
