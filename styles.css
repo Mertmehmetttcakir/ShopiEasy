@@ -5,7 +5,7 @@ body {
     align-items: center;
     height: 100vh;
     margin: 0;
-    background-color: #f8f8f8;
+    background-color: white;
 }
 
 #app {
@@ -16,20 +16,26 @@ body {
     width: 80%;
 }
 
+
+
 .navbar {
      position: fixed;
      top: 0;
      background-color: #333;
-        padding: 10px;
-        width: 100%;
-        display: flex;
-        justify-content: space-around;
-        color: #fff;
-        margin-bottom: 10px;
+     padding: 10px;
+     width: 100%;
+     display: flex;
+     justify-content: space-around;
+     color: #fa0050;
+     left:0;
 }
 
 .navbar-item {
     cursor: pointer;
+}
+
+.navbar-item:hover{
+    background-color: #555;
 }
 
 .content {
@@ -66,7 +72,7 @@ body {
 
 .cart-button {
     background-color: #333;
-    color: #fff;
+    color: #fa0050;
     border: none;
     padding: 10px;
     cursor: pointer;
@@ -100,4 +106,34 @@ body {
 
 .remove-btn:hover {
     background-color: #c9302c;
+}
+
+.header {
+    position:fixed;
+    top: 40px;
+    width: 60%;
+    background-color: #333;
+    color: #fff;
+    border-style:solid;
+    border-width:2px;
+    border-color:#fa0050;
+    text-align:center;
+    right:400px;
+
+}
+
+ul {
+   padding:0;
+   position:relative;
+   left:-3em;
+   overflow:hidden;
+   border-style:solid;
+   border-color:#fa0050;
+   width:40%;
+}
+
+
+ul li{
+    font-size:24px;
+
 }

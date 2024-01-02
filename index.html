@@ -14,11 +14,12 @@
     <div class="navbar-item" @click="showpage('home')">Home</div>
     <div class="navbar-item" @click="showpage('about')">About</div>
     <div class="navbar-item" @click="showpage('contact')">Contact</div>
+    <div class="navbar-item" @click="showpage('products')">Products</div>
     <button class="cart-button" @click="toggleCart">Shopping Cart</button> <!-- Shopping Cart butonu eklendi -->
   </nav>
 
   <!-- Ürünler -->
-  <div class="content">
+  <div class="content" v-if="currentPage == 'products'">
     <div class="products">
       <div class="product" draggable="true" @dragstart="dragStart('Product 1', 10)">Product 1 - $10</div>
       <div class="product" draggable="true" @dragstart="dragStart('Product 2', 20)">Product 2 - $20</div>
@@ -26,17 +27,33 @@
     </div>
   </div>
 
-  <div id="home" class="content" v-show="currentPage === 'home'">
-    <h1 style="text-align: center; position: relative; top: 50%; transform: translateY(-50%);">Welcome to our site</h1>
-    <p style="text-align :center">Feel free to check out our products</p>
+  <div id="home"  v-show="currentPage === 'home'">
+    <h1 class="header">Welcome to our site</h1>
+    <ul class="ul" style="background-color:Cornsilk;left:0;padding-left:0px;">
+      <li class="ul li">You can surf through our site's tabs</li>
+      <li class="ul li">Find out what is best for you</li>
+      <li class="ul li">And order what suits you</li>
+      <li></li>
+    </ul>
   </div>
-  <div id="about" class="content" v-show="currentPage === 'about'">
-    <h1 style="text-align: center; position: relative; top: 50%; transform: translateY(-50%);">This is an online shopping platform where you can buy any items you want and get it delivered</h1>
+  <div id="about"  v-show="currentPage === 'about'">
+    <h1 style="text-align: center; position: fixed; top: 30%; transform: translateY(-50%); ">This is an online shopping platform where you can buy any items you want and get it delivered</h1>
+    <ul class="ul" style="background-color:Cornsilk; margin-left: 0; padding-left: 30px;">
+      <li style="ul li">Flexible payment methods</li>
+      <li class="ul li">Wide range of products</li>
+      <li class="ul li">Simple and user friendly design</li>
+    </ul>
   </div>
 
-  <div id="contact" class="content" v-show="currentPage === 'contact'">
-    <h1 style="text-align: center; position: relative; top: 50%; transform: translateY(-50%);">Contact Us</h1>
-    <p style="text-align: center">Get in touch with our support team or visit our office.</p>
+  <div id="contact" v-show="currentPage === 'contact'">
+    <h1 class="header">Contact Us</h1>
+    <p style="text-align: center;top:30%;font-size:30px;">Get in touch with our support team or visit our office.</p>
+    <p style="top:90%;bottom:10%;text-align:left:font-size:24px;">Kayışdağı/ISTANBUL</p>
+    <p style="top:95%;bottom;5%;text-align:left:font-size:24px;">0216-377-45-567</p>
+  </div>
+
+  <div id="products" v-show="currentPage === 'products'">
+    <h1 style="text-align:center; position:fixed; top:40px; width:80%;">YOU CAN CHECK OUR PRODUCTS HERE</h1>
   </div>
 
 
