@@ -42,6 +42,7 @@ new Vue({
         showpage(page){
             this.currentPage = page
             this.resetContent();
+            this.showCart = page === 'payment';
         },
         resetContent() {
             const pages = ['home', 'about', 'contact'];
