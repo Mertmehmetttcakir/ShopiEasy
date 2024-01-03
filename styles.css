@@ -5,8 +5,7 @@ body {
     align-items: center;
     height: 100vh;
     margin: 0;
-    background-color: white;
-}
+    background-color: #760504;}
 
 #app {
     display: flex;
