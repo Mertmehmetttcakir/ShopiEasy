@@ -53,5 +53,10 @@ new Vue({
             });
 
         },
+        handlePayment(){
+            this.showCart = false;
+            this.currentPage = 'paymentsuccessful';
+            document.getElementById('feedback').style.display = 'block';
+        },
     },
 });
