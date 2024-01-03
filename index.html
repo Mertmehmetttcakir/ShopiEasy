@@ -30,6 +30,7 @@
 
   <div id="home"  v-show="currentPage === 'home'">
     <h1 class="header">Welcome to our site</h1>
+    <img src="Online Shop.png" class="center">
     <ol class="ol" style="background-color:Cornsilk;left:0;padding-left:0px;">
       <li class="ol li">You can surf through our site's tabs</li>
       <li class="ol li">Find out what is best for you</li>
@@ -38,7 +39,8 @@
     </ol>
   </div>
   <div id="about"  v-show="currentPage === 'about'">
-    <h1 style="text-align: center; position: fixed; top: 30%; transform: translateY(-50%); ">This is an online shopping platform where you can buy any items you want and get it delivered</h1>
+    <h1 style="text-align: center; position: fixed; top: 20%; transform: translateY(-50%); ">This is an online shopping platform where you can buy any items you want and get it delivered</h1>
+    <img src="about.png" class="center">
     <ol class="ol" style="background-color:Cornsilk; margin-left: 0; padding-left: 30px;">
       <li class="ol li">Flexible payment methods</li>
       <li class="ol li">Wide range of products</li>
@@ -48,6 +50,7 @@
 
   <div id="contact" v-show="currentPage === 'contact'">
     <h1 class="header">Contact Us</h1>
+    <img src="contactus.png" class="center" style="width:600px;">
     <p style="text-align: center;top:30%;font-size:30px;">Get in touch with our support team or visit our office.</p>
     <p style="top:90%;bottom:10%; text-align:left;font-size:24px;">Kayışdağı/ISTANBUL</p>
     <p style="top:95%;bottom:5%;text-align:left;font-size:24px;">0216-377-45-567</p>
@@ -75,6 +78,7 @@
 
     <div id="paymentsuccessful" v-show="currentPage === 'paymentsuccessful'">
       <h1 class="header">YOUR PAYMENT WAS SUCCESSFUL</h1>
+      <img src="tick.png" class="center">
       <h2 style="text-align: center;top:30%;">YOU CAN STILL CHECK OUR OTHER PAGES</h2>
     </div>
 
