@@ -15,7 +15,8 @@
     <div class="navbar-item" @click="showpage('about')">About</div>
     <div class="navbar-item" @click="showpage('contact')">Contact</div>
     <div class="navbar-item" @click="showpage('products')">Products</div>
-    <button class="cart-button" @click="toggleCart" v-show="currentPage === 'products'">Shopping Cart</button> <!-- Shopping Cart butonu eklendi -->
+    <div class="navbar-item" @click="showpage('payment')">Payment</div>
+    <button class="navbar-item" @click="toggleCart" v-show="currentPage === 'products'">Shopping Cart</button> <!-- Shopping Cart butonu eklendi -->
   </nav>
 
   <!-- Ürünler -->
@@ -55,6 +56,29 @@
   <div id="products" v-show="currentPage === 'products'">
     <h1 style="text-align:center; position:fixed; top:40px; width:80%;">YOU CAN CHECK OUR PRODUCTS HERE</h1>
   </div>
+
+  <div id="payment" v-show="currentPage === 'payment'">
+    <form id="paymentForm" @submit.prevent="handlePayment">
+      <label for="cardNumber">Kart Numarasi:</label>
+      <input type="text" id="cardNumber" placeholder="XXXX XXXX XXXX XXXX" pattern="[0-9]{4}\s[0-9]{4}\s[0-9]{4}\s[0-9]{4}" title="Lutfen 16 haneli kart numaranizi 4'erli olarak girin" required><br><br>
+
+      <label for="expiry">Son Kullanma Tarihi:</label>
+      <input type="text" id="expiry" placeholder="AA/YY" required><br><br>
+
+      <label for="cvv">Guvenlik Kodu:</label>
+      <input type="text" id="cvv" placeholder="CVV" required><br><br>
+
+      <button class="paymentbutton" type="submit">Odeme Yap</button>
+      <p id="feedback" style="display: none; color: green;">Odemeniz basariyla gerceklesti!</p>
+    </form>
+    </div>
+
+    <div id="paymentsuccessful" v-show="currentPage === 'paymentsuccessful'">
+      <h1 class="header">YOUR PAYMENT WAS SUCCESSFUL</h1>
+      <h2 style="text-align: center;top:30%;">YOU CAN STILL CHECK OUR OTHER PAGES</h2>
+    </div>
+
+
 
 
 
