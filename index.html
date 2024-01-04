@@ -67,6 +67,7 @@
         <img src="./products/kaliusb.png" class="imagee">
         <div class="product" draggable="true" @dragstart="dragStart('USB Kali', 15)">Usb Kali - $15</div>
       </div>
+      </div>
   </div>
 
   <div id="payment" v-show="currentPage === 'payment'">
@@ -85,17 +86,17 @@
     </form>
   </div>
 
-    <div id="paymentsuccessful" v-show="currentPage === 'paymentsuccessful'">
-      <h1 class="header">YOUR PAYMENT WAS SUCCESSFUL</h1>
-      <img src="tick.png" class="center">
-      <h2 style="text-align: center;top:30%;">YOU CAN STILL CHECK OUR OTHER PAGES</h2>
-    </div>
+  <div id="paymentsuccessful" v-show="currentPage === 'paymentsuccessful'">
+    <h1 class="header">YOUR PAYMENT WAS SUCCESSFUL</h1>
+    <img src="tick.png" class="center">
+    <h2 style="text-align: center;top:30%;">YOU CAN STILL CHECK OUR OTHER PAGES</h2>
+  </div>
 
 
 
 
 
-  <!-- Sepet -->
+
   <div class="cart" @dragover="dragOver" @drop="drop" v-show="showCart">
     <h2>Shopping Cart</h2>
     <ul v-if="cart.length > 0">
