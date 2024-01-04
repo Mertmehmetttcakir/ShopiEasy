@@ -9,23 +9,19 @@
 <body>
 
 <div id="app">
-  <!-- Navigasyon Barı -->
+
   <nav class="navbar">
     <div class="navbar-item" @click="showpage('home')">Home</div>
     <div class="navbar-item" @click="showpage('about')">About</div>
     <div class="navbar-item" @click="showpage('contact')">Contact</div>
     <div class="navbar-item" @click="showpage('products')">Products</div>
     <div class="navbar-item" @click="showpage('payment')">Payment</div>
-    <button class="navbar-item" @click="toggleCart" v-show="currentPage === 'products'">Shopping Cart</button> <!-- Shopping Cart butonu eklendi -->
+    <button class="navbar-item" @click="toggleCart" v-show="currentPage === 'products'">Shopping Cart</button>
   </nav>
 
-  <!-- Ürünler -->
+
   <div class="content" v-if="currentPage === 'products'">
-    <div class="products">
-      <div class="product" draggable="true" @dragstart="dragStart('Product 1', 10)">Product 1 - $10</div>
-      <div class="product" draggable="true" @dragstart="dragStart('Product 2', 20)">Product 2 - $20</div>
-      <!-- ... Diğer ürünler ... -->
-    </div>
+
   </div>
 
   <div id="home"  v-show="currentPage === 'home'">
@@ -58,6 +54,19 @@
 
   <div id="products" v-show="currentPage === 'products'">
     <h1 style="text-align:center; position:fixed; top:40px; width:80%;">YOU CAN CHECK OUR PRODUCTS HERE</h1>
+    <div class="products">
+      <div class="box">
+        <img src="./products/badusb.png" style="" class="imagee">
+        <div class="product" draggable="true" @dragstart="dragStart('Bad Usb', 10)">Bad Usb - $10</div>
+      </div>
+      <div class="box">
+        <img src="./products/wifi_jammer.png" class="imagee" >
+        <div class="product" draggable="true" @dragstart="dragStart('ESP 8266', 20)">ESP 8266 - $20</div>
+      </div>
+      <div class="box">
+        <img src="./products/kaliusb.png" class="imagee">
+        <div class="product" draggable="true" @dragstart="dragStart('USB Kali', 15)">Usb Kali - $15</div>
+      </div>
   </div>
 
   <div id="payment" v-show="currentPage === 'payment'">
@@ -74,7 +83,7 @@
       <button class="paymentbutton" type="submit">Odeme Yap</button>
       <p id="feedback" style="display: none; color: green;">Odemeniz basariyla gerceklesti!</p>
     </form>
-    </div>
+  </div>
 
     <div id="paymentsuccessful" v-show="currentPage === 'paymentsuccessful'">
       <h1 class="header">YOUR PAYMENT WAS SUCCESSFUL</h1>
